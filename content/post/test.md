@@ -12,7 +12,9 @@ categories:
 
 **镜中**
 
-{{< blockquote author="by 张枣" >}}
+张枣
+
+{{< blockquote >}}
 只要想起一生中后悔的事
 
 梅花便落了下来
@@ -37,8 +39,3 @@ categories:
 
 梅花便落满了南山
 {{< /blockquote >}}
-
-
-# 我喜欢的音乐
-
-{{% music "2897022" %}}

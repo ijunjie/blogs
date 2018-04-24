@@ -244,17 +244,295 @@ BTW， 实际就这个例子本身而言，完全可以采用已有的函数，�
 
 <img src="/fp/prog-paradigm-categories.png">
 
+
+三大核心编程范式的比较：
+
+|范式|程序|输入|输出|程序设计|程序运行|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|命令式|自动状态机|初始状态|最终状态|设计指令|命令执行|
+|函数式|数学函数|自变量|因变量|设计函数|表达式转换|
+|逻辑式|逻辑证明|题设|结论|设计命题|逻辑推理|
+
+
 ## 面向对象
 
+### OOP与其他编程范式
+ 
+不知识是否留意到，上面的图中 OOP 哪里去了？
+
+答案是 OOP 和它们不在一个范畴，简单讲，没什么关系。严格讲，是**正交**的关系。（数学上把两个相互垂直的向量称作正交。在计算机领域，两个组件如果互相没有什么影响，就可以称作是正交的。）
+
+纯粹的OOP是不存在的，必须结合其他范式而存在。OOP虽然是从命令式发展而来，但这只是历史事实（可能带有某种历史上的必然性），但OOP的思想并不是跟命令式绑定的，也可以应用到函数式编程。
+
+支持OOP的语言大多是命令式，但也存在函数式和逻辑式的OO语言。
+
+**OOP与三大核心编程范式正交，并且越来越广泛地向它们渗透。**
+
+### 面向 vs 导向
+
+**Oriented**意思是“以...为方向，以...为目的”。由于着眼点和思维方式不同，不同编程范式各有侧重，一些编程范式使用oriented来表示一种倾向。
+
+在大陆，Object-Oriented一般译作“面向对象”。这其实是有问题的。“面向”的宾语往往是已经确定的目标，“面向对象”使人误以为对象已经存在，这种译法让人莫名其妙，不知所谓。
+
+在港台地区，Object-Oriented译作**“物件导向”**，且不说“物件”恰当与否，“导向”实际上比“面向”高很多。又如，经济学中“Market-Oriented”译作“市场导向”，而不是“面向市场”。
+
+总之，“对象导向”更能反映这个范式本身的精髓——在设计中以对象为导向。
+
+### OOP的优点和局限性
+
+OOP的思想无需多说。稍微有点计算机编程基础的人都不会陌生。它更接近人的思维方式，将函数按主体执行者分组，并与数据封装到一起，易于理解和使用。在传参方式上变得更加简洁。在面向对象流行之前，只有函数和参数；有了面向对象，原先作为参数的执行者在语法形式上可以放到点操作符的前面，如`method(obj, arg)`变为`obj.method(arg)`.
+
+OOP是有局限性的。当初之所以流行是有商业利益推动。OOP有一段时间极其流行，近些年稍微冷却下来，人们对OOP的看法也趋于理性。归结起来，OOP流行的原因如下：
+
+- 人们误以为OOP容易学习（实际在实践中很难把握其精髓）
+- 人们以为OOP会使代码更容易复用（这是个错觉）
+- OOP被一些商业公司过分宣传
+- OOP创造了一个新兴软件产业
+
+关于OOP的局限性，网上有不少资料。这里仅列举两个牛人说过的话：
+
+{{< blockquote author="John Carmack（第一人称射击游戏之父）" >}} 有时，优雅的实现只需要一个函数。不是一个方法，不是一个类，不是一个框架，只是一个函数。 {{< /blockquote >}}
 
 
+{{< blockquote author="Joe Armstrong（Erlang创始人）" >}} 面向对象编程语言的问题在于，它总是附带着所有它需要的隐含环境。你想要一个香蕉，但得到的却是一个大猩猩拿着香蕉，而且还有整个丛林。 {{< /blockquote >}}
 
-## 函数式编程
+## 函数式思想
+
+函数式编程可以看做声明式编程的一个子集。近年来，命令式编程语言越来越多地引入函数式（声明式）编程特性。函数式编程已然成为主流编程语言的标配。
+
+实际上很多人已经在不同程度上使用函数式编程了，如很多场合常见的map, filter，reduce,. 其中体现的是与命令式截然不同的思想：不使用选择和循环（看不到if和for），而选择和循环是结构化编程的两个核心。
+
+不同语言的函数式能力可能有很大差别。一门语言是不是函数式语言，其标准是有争议的，往往会陷入无休止的争论。我们可以简单理解为一种程度上的差别。重要的是要领会和理解函数式思维方式。
+
 ## 三板斧
+
+上面提到的map, filter, reduce可以说是函数式编程的三板斧。也是很多初学函数式编程最先认识的三个函数。即使仅仅学会这三个函数，就足以是代码整洁度提高一个档次。
+
+实际上，在Android开发或者响应式编程，如RxJava/RxJS中，这三个函数式很常见的。
+
+Javascript也是支持这三个函数的。
+
+map 和 filter:
+
+```javascript
+let a = [1, 2, 3, 4];
+let r1 = a.map(e => e * e);
+console.log(r1); // [1, 4, 9, 16]
+
+let r2 = r1.filter(e => e % 2 == 0);
+console.log(r2); // [4, 16]
+```
+
+reduce:
+
+在对一个集合中的元素按顺序两两操作时，根据某种策略得到一个结果，得到的结果参与下一次操作，最终被归约为一个结果，即reduce的返回值。
+
+有时需要提供一个初始值，同第一个元素进行运算，返回的值同第二个元素进行运算，以此类推。
+
+```javascript
+let a = [1, 2, 3, 4];
+let r3 = a.reduce((s, e) => s + e, 0);
+console.log(r3); // 10
+```
+
+返回值可以是与几何元素不同的类型：
+
+```javascript
+let a = [1, 2, 3, 4];
+let r3 = a.reduce((s, e) => s.concat(e), "");
+console.log(r3); // 1234
+```
+
+reduce在很多语言中都有支持。掌握其原理就会一通百通。
+
+Java 8:
+
+```java
+List<String> names = Arrays.asList("hello", "world", "functional");
+String longestName = names.stream
+        .reduce("program", (u, e) -> u.length() >= e.length() ? u: e);
+Assert.assertTrue(longestName.equals("functional"));
+```
+
+reduce是Java 8的Stream的方法：
+
+```java
+<U> U reduce(U identity, BiFunction<U, T, U> accumulator);
+```
+
+### Collector
+
+实际上在Java 8不会经常用直接用到reduce. 更常用的是Java 8提供的工具类Collectors.
+
+下面的方法将一个Map翻转：
+
+```java
+static <K, V> Map<V, Set<K>> reverse(Map<K, V> map) {
+    if (map.values().contains(null))
+        throw new IllegalArgumentException("Null value contained.");
+
+    return map.entrySet().stream()
+            .collect(Collectors.groupingBy(Map.Entry::getValue,
+                Collectors.mapping(Map.Entry::getKey, Collectors.toSet())));
+}
+```
+
+下面看一个词频统计的例子：
+
+传统命令式风格：
+
+```java
+public Map<String, Long> frequency1() {
+    TreeMap<String, Long> wordMap = new TreeMap<>();
+    Matcher m = Pattern.compile("\\w+").matcher(words);
+    while (m.find()) {
+        String word = m.group().toLowerCase();
+        if (!NON_WORDS.contains(word)) {
+            Long count = wordMap.get(word);
+            if (count == null) {
+                wordMap.put(word, 1L);
+            } else {
+                wordMap.put(word, count + 1L);
+            }
+        }
+    }
+    return wordMap;
+}
+```
+
+这段代码的特点：
+
+- 不同任务**交织（complect）**在一起，用一次循环完成多个任务
+- 每次迭代中有三项操作：转换为小写，滤除虚词，计算词频
+- 牺牲了代码的清晰，换取执行性能
+- 包含大量if判断，使用循环————遵循了结构化编程原则。
+
+
+下面我们使用函数式编程风格重构。
+
+实际上计算词频的几行代码可以使用`wordMap.merge(word, 1L, (a, b) -> a + b)`代替。但仅仅是这一点不够彻底。完全的函数式风格要像下面这样：
+
+```java
+public Map<String, Long> frequency2() {
+    reurn wordStream(words, "\\w+")
+            .map(String::toLowerCase)
+            .filter(w ->!NON_WORDS.contains(w))
+            .collect(
+                Collectors.groupingBy(
+                    Function.identity,
+                    TreeMap::new,
+                    Collectors.counting()));
+}
+
+private static Stream<String> wordStream(String words, String regex) {
+    Stream.Builder<String> builder = String.builder();
+    Matcher matcher = Pattern.compile(regex).matcher(words);
+    while (matcher.find()) {
+        builder.add(matcher.group());
+    }
+    return builder.build();
+}
+```
+
+抽取出滤除虚词的函数wordStream. 由于Matcher和Pattern本身的原因，wordStream的实现无法重构成函数式风格。
+
+
+可以看到，重构后的frequency2方法有以下特点：
+
+- 使用map完成转换小写
+- 使用filter完成虚词过滤
+- 使用groupingBy完成词频统计
+- 代码清晰
+- 消除了显示的判断和循环
+- 抽象层次得到提高
+
 ## 一等公民
+
+函数式编程语言中，函数通常作为一等公民（first-class member）. 其含义是，函数跟其他数据类型处于平等的位置。
+
+- 函数可以赋值给变量
+- 函数可以作为参数
+- 函数可以作为返回值
+
+有些OOP语言中，函数并不是一等公民（如Ruby），但仍然支持函数式编程风格。这跟基于对象有很大关系。如Java的Function，Ruby的method可以提取方法作为对象。
+
 ## lambda
-## 高阶函数
-## 柯里化
+
+lambda是函数式编程的核心。简单讲，lambda就是**匿名函数**。
+
+不同语言对lambda的支持形式不同，约束也不同。关于函数、lambda和闭包的区别，请参考闭包一节。
+
+下面是一些语言中的lambda形式：
+
+Javascript:
+
+```javascript
+
+let f = i => console.log(i);
+
+```
+
+Java:
+
+```java
+Consumer<String> f = i -> System.out.println(i);
+```
+
+Scala:
+
+```scala
+val f: String => Unit = i => println(i)
+```
+
+Ruby:
+
+```ruby
+f = lambda { |i|
+  put i
+}
+```
+
+Groovy:
+
+```groovy
+def f1 = { i -> println(i)}
+def f2 = { println it}
+```
+
+Python:
+
+```python
+f = lambda i: print(i)
+```
+
+## 高阶函数和柯里化
+
+高阶函数简单来讲就是**接受函数作为参数**或**返回函数**的函数。
+
+柯里化的函数具有多个参数列表。
+
+“柯里”来自于著名数学家**Haskell B. Curry**. 没错，就是编程语言Haskell的Haskell。他的名字和姓氏分别成为了一门编程语言的名字和一个函数式概念的名字。
+
+来看一下柯里化：
+
+Javascript正常写法，调用时传递多个参数：
+
+```javascript
+let f1 = (a, b) => a + b;
+let r1 = f1(1, 2)；
+```
+
+柯里化：
+
+```javascript
+let f2 = a => b => a + b;
+let r2 = f2(1)(2);
+```
+
+可以看到，通过高阶函数可以实现拆分参数列表。实际上每个参数列表对应返回的是一个Partial Application.
+
+柯里化是一种常用的函数式编程技巧。在一些语言中也可以用于辅助类型推断。
+
 ## 纯函数
 ## 副作用
 ## 闭包

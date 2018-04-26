@@ -290,4 +290,4 @@ OOP是有局限性的。当初之所以流行是有商业利益推动。OOP有�
 {{< blockquote author="Joe Armstrong（Erlang创始人）" >}} 面向对象编程语言的问题在于，它总是附带着所有它需要的隐含环境。你想要一个香蕉，但得到的却是一个大猩猩拿着香蕉，而且还有整个丛林。 {{< /blockquote >}}
 
 ---
-续： [浅谈函数式编程-下篇：函数式编程基础]()
+续： [浅谈函数式编程-下篇：核心概念](https://ijunjie.github.io/post/fp/fp-basic/)

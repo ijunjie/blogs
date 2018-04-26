@@ -1,6 +1,6 @@
 ---
 title: "Ramda：一个精致的Javascript函数式编程库"
-date: 2018-04-22T14:25:02+08:00
+date: 2018-04-22
 draft: false
 tags:
 - fp

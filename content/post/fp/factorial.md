@@ -9,9 +9,9 @@ categories:
 - fp
 ---
 
-一般的递归或者尾递归都要**显式地调用递归函数**，那么匿名函数如何实现递归调用？
+一般的递归都要**显式地调用递归函数**，那么匿名函数如何实现递归调用？
 
-这里用Javascript写了一个求阶乘的例子：
+这里用 Javascript 匿名函数 + 尾递归实现一个求阶乘的例子，代码如下：
 
 ```javascript
 let factorial = n => (f => n => s => f(f)(n)(s))
@@ -19,22 +19,20 @@ let factorial = n => (f => n => s => f(f)(n)(s))
   if (n == 1) return s;
   let m = n - 1;
   return f(f)(m)(s * m);
-})
-(n)
-(n);
+})(n)(n);
 
 console.log(factorial(5));
 ```
 
-在函数式编程方面训练有素的程序员对这段代码不会感到困难。这段代码中用到了高阶函数、柯里化、尾递归、IIFE等技巧。
+这段代码中使用了一些函数式编程技巧，如高阶函数、柯里化、尾递归、IIFE等。下面解释如何一步步写出上面这段代码。
 
-下面解释如何一步步写出上面这段代码。
+
 
 ## 递归和尾递归
 
 这一节参考了`Takafumi Shido`的`Yet Scheme Another Tutorial`, 中文版[《Scheme入门教程》](http://deathking.github.io/yast-cn/).
 
-首先看一下什么是递归和尾递归。通常使用计算阶乘来解释递归。这里使用Scheme语言：
+首先看一下什么是递归。通常使用计算阶乘来解释递归。这里使用Scheme语言：
 
 ```scheme
 (define (fact n)
@@ -89,6 +87,8 @@ console.log(factorial(5));
 
 因为fact-rec并不等待其它函数的计算结果，因此当它计算结束时即从内存中释放。计算通过修改fact-rec的参数来演进，这基本上等同于循环。
 
+
+
 ## Javascript实现
 
 现在我们使用Javascript实现上面一节中阶乘的例子， 使用尾递归。
@@ -140,4 +140,4 @@ let factorial = n => (f => n => s => f(f)(n)(s))
 console.log(factorial(5));
 ```
 
-这里面关键在于**匿名函数通过形式参数实现了递归调用**。匿名函数没有名字，只能将匿名函数作为参数传递实现递归调用。了解更多，请参考我的另一篇博文相关章节的示例： [浅谈函数式编程（高阶函数）](https://ijunjie.github.io/post/fp/fp-basic/#%E7%BB%BC%E5%90%88%E7%A4%BA%E4%BE%8B)
+这里面关键在于**匿名函数通过形式参数实现了递归调用**。匿名函数没有名字，只能将匿名函数作为参数传递实现递归调用。欲了解更多，请参考笔者的另一篇文章： [浅谈函数式编程（高阶函数）](https://ijunjie.github.io/post/fp/fp-basic/#%E7%BB%BC%E5%90%88%E7%A4%BA%E4%BE%8B)

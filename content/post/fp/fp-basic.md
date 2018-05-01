@@ -1,5 +1,5 @@
 ---
-title: "浅谈函数式编程—下篇：核心概念"
+title: "浅谈函数式编程（下）：核心概念"
 date: 2018-04-26
 draft: false
 tags:
@@ -612,7 +612,8 @@ Function<Function<T, CompletionStage<U>>, CompletionStage<U>> alsoFlatmap = ct::
 {{< blockquote >}} 谈论monad的第一原则是不要谈论monad；第二原则是不要读别人的关于monad的文章;第三原则是不要发表关于monad的文章误导他人。  {{< /blockquote >}}
 
 
-## FP不是银弹
+
+## 函数式编程不是银弹
 
 最后，我们用一句带有道德训诫意味话做本篇的收尾——FP不是银弹。
 

@@ -1,5 +1,5 @@
 ---
-title: "openstack4j 中的 IoC 设计"
+title: "openstack4j 中的依赖管理"
 date: 2018-04-23
 draft: false
 tags:
@@ -11,21 +11,17 @@ categories:
 
 ## openstack4j 简介
 
-openstack4j 是一个开源的 Java OpenStack SDK. 更多信息请了解其 [官网](http://openstack4j.com/).
+[openstack4j](http://openstack4j.com/) 是一个使用 Java 编写的开源 OpenStack SDK.  源码地址： [https://github.com/ContainX/openstack4j.git](https://github.com/ContainX/openstack4j.git)
 
-源码地址：[https://github.com/ContainX/openstack4j.git](https://github.com/ContainX/openstack4j.git)
 
-## openstack4j 中的 IoC
 
-关于 DI 和 IoC 的区别实为仁者见智的问题，本文不会区分这两个概念。
+## 依赖管理
 
-openstack4j 并没有采用第三方的 DI/IoC 实现，如 Guice 等，而是使用很少的代码实现了简单、优雅的 IoC 管理。
+openstack4j 并没有采用第三方的 IoC 实现，如 Guice 等，而是使用很少的代码实现了简单、易用的依赖管理。
 
 ### SPI
 
-[SPI](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html) 是一种服务发现机制。简单来讲，服务提供者在 META-INF/services/ 目录有一个以服务接口命名的文件，文件中写明实现类。
-
-jdk 提供一个工具类 java.util.ServiceLoader 用于载入实现。
+[SPI](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html) 是一种服务发现机制。简单来讲，服务提供者在类路径 META-INF/services/ 下面提供一个以服务 interface 名命名的文本文件，文件内容为实现类名。jdk 提供了一个工具类 java.util.ServiceLoader 用于载入实现。
 
 在 openstack4j/core/src/main/java/org/openstack4j/api/Apis.java 中，可以看到有一个 APIProvider 类型的静态成员:
 
@@ -40,7 +36,7 @@ jdk 提供一个工具类 java.util.ServiceLoader 用于载入实现。
     }
 ```
 
-APIProvider 在初始化时，从 openstack4j/core/src/main/resources/META-INF/services/ 下的 `org.openstack4j.api.APIProvider` 的文本文件中读取实现类 `org.openstack4j.openstack.provider.DefaultAPIProvider`.
+APIProvider 的初始化采用 SPI 机制，从 openstack4j/core/src/main/resources/META-INF/services/ 下的 `org.openstack4j.api.APIProvider` 的文本文件中读取实现类 `org.openstack4j.openstack.provider.DefaultAPIProvider`.
 
 ### APIProvider 设计
 
@@ -49,11 +45,11 @@ APIProvider 提供两个功能：
 - API实现的注册（绑定）
 - 实例对象的获取
 
-这两点也是一个 DI/IoC 实现的核心。
+这两点也是一个 DI/IoC 的核心功能。
 
-APIProvider 的源码：
 
-位置： `openstack4j/core/src/main/java/org/openstack4j/api/APIProvider.java`
+
+APIProvider 的源码`openstack4j/core/src/main/java/org/openstack4j/api/APIProvider.java`
 
 
 ```java
@@ -86,30 +82,30 @@ public interface APIProvider {
 }
 ```
 
-OpenStack 的 API, 对客户端 SDK 来说是稳定的，因此 APIProvider 中不需要暴露 bind 方法，而是在 initialize 中将已知的 OpenStack API 全部做初始化绑定。
+OpenStack 的 API, 对客户端 SDK 来说是稳定的、不易改变的，因此不需要暴露 bind 方法，而是在 initialize 中将已知的 OpenStack API 全部做初始化绑定。
 
 get 接口用于根据 interface 的 class 获取其实现类的实例。
 
 
-### DafaultAPIProvider 实现
+### APIProvider 实现
 
-源码路径：
+所有 OpenStack API 的实现都注册在
 
 `openstack4j/core/src/main/java/org/openstack4j/openstack/provider/DefaultAPIProvider.java`
 
-所有 OpenStack API 的实现都注册在此。从 import 语句可以看出 compute, identity, sahara, image, telemetry, trove 等 OpenStack 各个组件的 API 都包含在内。
-
-```java
-    private static final Map<Class<?>, Class<?>> bindings = Maps.newHashMap();
-    private static final Map<Class<?>, Object> instances = Maps.newConcurrentMap();
-```
+中。从 import 语句可以看出 compute, identity, sahara, image, telemetry, trove 等 OpenStack 各个组件的 API 都包含在内。
 
 DafaultAPIProvider 的内部使用了两个 Map 来保存实现类注册表和实例缓存表。
 
 - bindings 是 API interface class 和 API implementation class 的映射
 - instances 是一个缓存，将按需实例化的对象放入其中，再次读取时可直接返回
 
-bindings 使用了 HashMap，而没有使用 ConcurrentMap 的原因是，bind 方法不暴露，全部绑定在 initialize 中完成， 没有并发访问的场景。而 instances 使用了 ConcurrentMap 是因为 get 会有并发访问场景。
+```java
+    private static final Map<Class<?>, Class<?>> bindings = Maps.newHashMap();
+    private static final Map<Class<?>, Object> instances = Maps.newConcurrentMap();
+```
+
+bindings 使用了 HashMap，而没有使用 ConcurrentMap ，这是因为 bind 方法不暴露，全部绑定是在 initialize 中串行完成；而 instances 使用了 ConcurrentMap 是因为 get 可能有客户端并发访问的场景。
 
 
 initialize 中完成所有 API 实现类的注册：
@@ -154,11 +150,13 @@ get 的实现：
 	- 如果没有注册实现类，抛出异常。
 
 
+
+
 ## 总结
 
 openstack4j 的代码非常清晰、易懂； 其 IoC 设计遵循简单、实用的原则，够用即可。
 
-BTW，openstack4j 的 SDK 设计大量采用 builder 模式，支持链式调用，使用起来非常流畅：
+另外，openstack4j 大量采用 builder 模式，支持链式调用，使用起来非常流畅：
 
 ```java
 // Create a Server Model Object

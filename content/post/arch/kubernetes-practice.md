@@ -80,10 +80,6 @@ kubectl describe service sa-frontend-lb
 
 
 
-注意事项：三个节点要关闭 firewalld, selinux 以避免一些不必要的麻烦。
-
-
-
 ## 服务发现
 
 sa-frontend/src/App.js 中，访问 webapp 的URL不带域且增加了/api前缀： `/api/sentiment` . 

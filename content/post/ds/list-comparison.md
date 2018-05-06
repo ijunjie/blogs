@@ -10,7 +10,7 @@ categories:
 ---
 
 
-关于 ArrayList 和 LinkedList 的比较，网上流传着很多不准确的说法，如 “ArrayList 查询快，LinkedList 增删快”。这种说法过于笼统，不严谨，实际情况要复杂一些。下面从它们底层的数据结构和工作机制入手，按场景对比分析它们的性能差异。
+关于 ArrayList 和 LinkedList 的比较，网上流传着很多不准确的说法。比如 “ArrayList 查询快，LinkedList 增删快”，这种说法过于笼统，不严谨，实际情况要复杂一些。下面从它们底层的数据结构和工作机制入手，按场景对比分析它们的性能差异。
 
 影响 ArrayList 性能的关键点在于**数组拷贝**，动态扩容和随机增删元素都会进行数组拷贝。数组拷贝既消耗时间，又消耗空间，应尽量避免之。由数组拷贝机制可以推理得到 ArrayList 的一个特点，**增删元素的位置越往后越快**，因为元素位置越靠后，数组拷贝的规模越小。
 
@@ -22,10 +22,9 @@ categories:
 
 值得注意的是，要正确选择 for 循环和 Iterator：
 
-- ArrayList 使用普通 for 循环遍历效率比较高，不要用 Iterator 或 foreach （List 的 foreach实际就是iterator，但数组的 foreach 不是）
-- 由于 LinkedList 查找元素时寻址性能差，所以万不可使用普通的 for 循环遍历 LinkedList, 应该使用 Iterator 或者foreach.
-
-结论：对于遍历场景来说，尽量用 ArrayList，且使用普通 for 循环遍历；如果用了 LinkedList，用 Iterator 或 foreach 遍历。
+- ArrayList 使用普通 for 循环遍历效率比较高，不要用 Iterator
+- 由于 LinkedList 查找元素时寻址性能差，所以不要使用普通的 for 循环遍历 LinkedList, 应该使用 Iterator.
+- 关于 foreach， java 不同版本的编译器可能会对 foreach 做一些优化，需要根据实际测试结果判断
 
 
 ## 尾部增加元素

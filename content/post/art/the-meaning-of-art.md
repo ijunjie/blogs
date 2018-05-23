@@ -1,7 +1,7 @@
 ---
 title: "艺术的真谛"
 date: 2018-05-23
-draft: false
+draft: true
 tags:
 - art
 - reading

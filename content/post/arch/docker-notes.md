@@ -1,4 +1,12 @@
-
+---
+title: "Docker 学习笔记整理"
+date: 2018-05-19
+draft: true
+tags:
+- docker
+categories:
+- arch
+---
 # Docker 学习笔记整理
 
 [每天5分钟玩转 Docker 容器技术](http://www.cnblogs.com/CloudMan6/) 的学习笔记。

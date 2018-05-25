@@ -18,7 +18,7 @@ categories:
 
 - 创建型：Factory Method、Abstract Factory、Singleton、Builder、Prototype
 - 结构型：Adapter、Decorator、Proxy、Facade、Bridge、Composition、Flyweight
-- 行为型：Strategy、Template、Observer、Iteratee、责任链、命令、备忘录、状态、访问者、中介者、解释器
+- 行为型：Strategy、Template、Observer、Iteratee、责任链、Command、备忘录、状态、访问者、中介者、解释器
 
 参考资料：
 - 深入浅出设计模式中文版
@@ -114,9 +114,11 @@ BTW，非主流的东西早晚会被人民扔进历史的垃圾堆，比如 HOCO
 
 适配器本质上是一个中间虚拟层。
 
-类适配器可以继承一个类，同时实现 interface 的其他方法。**对象适配器**可以组合一个已有的实现类，并实现 interface 补充实现其他方法。推荐使用后者。
+用 Head First 设计模式的话来讲，如果一个东西走起路来像鸭子，叫起来像鸭子，那么它就完全可以被当做一只鸭子；然而实际上它有可能是一只安装了适配器的火鸡。组合一个火鸡对象，并实现 Duck 接口，这就是是对象适配器模式。
 
-默认适配器用于减少代码。如 interface 中声明方法过多，如果直接实现 interface 则需要实现所有方法。这时，如果有一个默认的抽象类提供了默认实现，则实现类只需要有选择地实现方法即可。
+而类适配器可以继承一个类，同时实现 interface 的其他方法。
+
+还有一种叫做默认适配器，用于减少代码。如 interface 中声明方法过多，如果直接实现 interface 则需要实现所有方法。这时，如果有一个默认的抽象类提供了默认实现，则实现类只需要有选择地实现方法即可。
 
 适配器模式使用过多会让系统非常凌乱。
 
@@ -156,6 +158,8 @@ abstract class XA extends A {
 
 ## Facade
 
+门面模式类似于总成车间。组合其他业务对象完成更高层次的功能并暴露给客户端。
+
 门面设模式体现了内外有别的思想。可以对系统接口做层次划分。某种意义上将，Facade 模式是对 public/protected/private 的补充。可以选择性的暴露方法供外部使用，既便于客户端使用，又保证安全性。
 
 ### Bridge
@@ -194,3 +198,13 @@ interface Subject {
     void notifyObservers();
 }
 ```
+
+## 行为型 11 种
+
+### Command
+
+Java 8 函数式新特性的出现，给了 Command 模式巨大冲击。这就是设计模式内化为语言级特性的一个典型例子。一个 Command 对象可以用一个方法引用优雅地实现。但 Java 8 的 Functional 接口只能有一个方法声明。定义 Command interface 更加灵活一些。如在 Command 中声明 execute 和 undo 两个方法。
+
+命令模式可以实现操作撤销。
+
+###

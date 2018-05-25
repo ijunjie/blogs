@@ -9,7 +9,7 @@ categories:
 - arch
 ---
 
-所谓“伪共享”实在是一个错误的翻译。不知是谁最初把 false sharing 翻译成“伪共享”。翻译得莫名其妙，不知所谓。实际意思是“错误的共享”。
+不知是谁最初把 false sharing 翻译成“伪共享”，翻译得莫名其妙，不知所谓。实际意思应该是“错误的共享”。
 
 最近在读的几本书都提到了 CPU 伪共享问题。这里尝试做一下总结。这几本书是：
 
@@ -23,7 +23,7 @@ categories:
 
 当多线程修改互相独立的变量时，如果这些变量共享同一个缓存行，就会无意中影响彼此的性能，这就是伪共享。伪共享是上层编程层面的问题，底层对应的是 CPU Cache 一致性问题。
 
-## 要点 1：CPU 通过缓存操作内存
+## CPU 通过缓存操作内存
 
 CPU 和内存的处理速度差距在 **100 倍**左右，因此需要高速缓存。CPU 的高速缓存采用SRAM (Static Random-Access Memory, 静态随机存取存储器), 频率与 CPU 基本一致，速度快，造价高；而内存使用 DRAM (Dynamic Random-Access Memory), DRAM 直到 DDR4 才接近 CPU 的速度。
 
@@ -35,7 +35,7 @@ CPU 缓存一般采用多级缓存机制。如 Intel 的一款 CPU：
 
 CPU 要访问 DRAM 的数据，要经过 L3，L2，L1 才能最终到达 CPU.
 
-## 要点 2：通过 MESI 协议解决 Cache 一致性问题
+## Cache 一致性问题和 MESI 协议
 
 每个 CPU 都有自己的 Cache；多个 CPU 核心的 Cache 应该是一致的。来自 Intel 的 MESI 协议是业界公认的 Cache 一致性问题最佳解决方案。
 
@@ -51,13 +51,16 @@ Cache Line 的头部有两个 bit 记录自身状态：
 一些细节：
 
 (1) 同时读取。CPU A 读取 -- Invalid 状态；加载后 -- Exclusive 状态。此时 CPU B 的读取请求会被 A 嗅探到，CPU A 在总线上复制一份作为应答，并将自身 Cache Line 改为 Shared 状态。CPU B 收到后也改为 Shared.
+
 (2) A 写 B 读。CPU A 写入内存前 -- Modified，此时其他 CPU 如果有读请求，则 A 嗅探到后先将自己的缓存写入内存，然后复制给其他 CPU，状态改为 Shared.
+
 (3) A 写 B 写。A 的 Modified 写入内存前， B 也发起写请求，则 A 优先写入，完成后设置为 Invalid. 然后导致 B 请求无响应，B 只能再次请求。
+
 (4) 如果多个 Shared 状态，有一个 CPU 进行写操作，会导致其他都变为 Invalid.
 
 总结：存在多个处理器时，对共享变量的操作会涉及多个 CPU 之间的协调问题及 Cache 失效问题。
 
-## 要点 3：伪共享问题的解决
+## 伪共享问题的解决
 
 Java 对象是在堆内存上分配空间的，成员变量是在内存空间上是连续的。它们完全有可能被加载到同一个 Cache Line 中。如果有两个线程运行在不同的 CPU 上，它们分别修改不同的成员变量，则会造成一个线程对变量的修改导致另一个线程所在的 CPU 的 Cache Line 失效，被迫重新加载 —— 这仅仅是因为不同变量处于同一个 Cache Line.
 
@@ -77,9 +80,12 @@ class VolatileLong {
 }
 ```
 
+由于填充字节的方案操作较为复杂，推荐使用 Java 8 的 @Contended 注解。**务必记得要加 jvm 参数 `-XX:-RestrictContended`**.
+
+
 ## 实验
 
-这个例子来源于 [http://ifeve.com/falsesharing/](http://ifeve.com/falsesharing/) 
+这个例子来源于 [http://ifeve.com/falsesharing/](http://ifeve.com/falsesharing/) 但做了修改。
 
 
 
@@ -124,7 +130,7 @@ public class FalseSharing {
 
 class VolatileLong {
     volatile long value;
-    public long p1, p2, p3, p4, p5, p6; // comment out
+    public long p1, p2, p3, p4, p5; // comment out, 原文中到 p6
 }
 
 class MyRunnable implements Runnable {

@@ -10,7 +10,8 @@ categories:
 
 # 设计模式概览
 
-**23 种设计模式中的价值在于思想，而不是模式本身。有的模式早已内化为语言特性；有的模式几乎是为了设计而设计，并没有多少真正的实用价值。**
+**设计模式的价值在于其思想，而不是模式本身。应该重点从目的而不是结构来认识和学习设计模式。
+有的模式早已内化为语言特性；有的模式在今天看来有过度设计之嫌，仿佛是为了设计而设计，并没有多少真正的实用价值。**
 
 
 设计模式可以分为三类：
@@ -19,8 +20,11 @@ categories:
 - 结构型：Adapter、Decorator、Proxy、Facade、Bridge、Composition、Flyweight
 - 行为型：Strategy、Template、Observer、Iteratee、责任链、命令、备忘录、状态、访问者、中介者、解释器
 
-https://blog.csdn.net/jason0539/article/details/44956775
-http://www.cnblogs.com/java-my-life/archive/2012/04.html
+参考资料：
+- 深入浅出设计模式中文版
+- Head First 设计模式
+- [https://blog.csdn.net/jason0539/article/details/44956775](https://blog.csdn.net/jason0539/article/details/44956775)
+- [http://www.cnblogs.com/java-my-life/archive/2012/04.html](http://www.cnblogs.com/java-my-life/archive/2012/04.html)
 
 
 ## 创建型 5 种
@@ -31,9 +35,9 @@ http://www.cnblogs.com/java-my-life/archive/2012/04.html
 - Builder
 - Prototype
 
-这些模式都在想方设法避免 new 而已。不管有什么实际意义上的理由，Java 代码里直接用 new 总是显得很低级。有时候人类的逻辑很奇怪，发明出的东西又想方设法避免使用。
+创建型模式都在想方设法避免 new 的使用。new 本身的操作是极快的，但对象初始化过程可能极慢。因此总的来说，Java 代码里直接用 new 总是显得很低级。
 
-其中，工厂模式、单例模式非常重要，常与反射结合使用；Builder 模式也是一种重要的设计技巧。
+其中，工厂模式、单例模式非常重要，常与反射结合使用，与 IoC 和 DI 有千丝万缕的联系；Builder 模式也是一种重要的设计技巧，用来化解对象构建过程复杂性；原型模式在 Java 中不是特别重要。
 
 ### Factory Method & Abstract Factory
 
@@ -85,7 +89,7 @@ public abstract class PizzaStore {
 
 也不建议用 enum, 因为这种方式有点非主流，不为人民大众所广泛接受。也只有 Java 语言的设计者才一厢情愿希望人们将 enum 用于单例，呵呵。
 
-扯点别的话题，非主流的东西早晚会被人民扔进历史的垃圾堆，比如 HOCON, 比如 Play Framework，比如 sbt，比如 Scala 的一些奇葩特性。Scala 本来可以成为一门通用且优秀的语言，但被设计者们搞得越来越复杂，设计者的学生要完成论文，拿 Scala 当实验材料。
+BTW，非主流的东西早晚会被人民扔进历史的垃圾堆，比如 HOCON, 比如 Play Framework，比如 sbt，比如 Scala 的一些奇葩特性。Scala 本来可以成为一门通用且优秀的语言，但被设计者们搞得越来越复杂，设计者的学生要完成论文，拿 Scala 当实验材料。
 
 ### Builder
 

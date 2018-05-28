@@ -1,5 +1,5 @@
 ---
-title: "我画过的一些人物"
+title: "人物"
 date: 2018-05-26
 draft: false
 tags:

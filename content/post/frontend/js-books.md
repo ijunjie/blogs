@@ -1,5 +1,5 @@
 ---
-title: "我读过的几本 JavaScript 书籍"
+title: "几本 JavaScript 书籍"
 date: 2018-05-28
 draft: false
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "几本 JavaScript 书籍"
+title: "一些 JavaScript 方面的书"
 date: 2018-05-28
 draft: false
 tags:
@@ -13,7 +13,7 @@ categories:
 JavaScript 是我最喜爱的语言之一。虽然并没有直接从事前端开发，但一直关注 JavaScript，并且对原生 JavaScript 语言有浓厚兴趣。以前读过几本不错的书籍，在这里推荐一下。
 
 
-## 《JAVASCRIPT语言精髓与编程实践 》- 周爱民
+## 《JavaScript 语言精髓与编程实践 》- 周爱民
 
 是一本绿皮的书。推荐的这几本书中最有深度、最透彻的一本。建议精读此书，可以对 JavaScript 语言有全面、深刻的认识。
 

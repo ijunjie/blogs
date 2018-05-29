@@ -112,15 +112,15 @@ defaultContentLanguage = "zh-cn"           # Default language to use
     gitmentJS = '<script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>'
     gitmentCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">'
 
-  #[params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
-  #  owner = ""              # Your GitHub ID
-  #  repo = ""               # The repo to store comments
-  #  clientId = ""           # Your client ID
-  #  clientSecret = ""       # Your client secret
+  [params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
+    owner = "ijunjie"              # Your GitHub ID
+    repo = "blog-gitment"               # The repo to store comments
+    clientId = "1554b4f2b80abedeb1fe"           # Your client ID
+    clientSecret = "8c203d8374520b8871e4c0b1b309bcf77bd369fe"       # Your client secret
 
 
   [params.reward]                                         # 文章打赏
-    enable = true
+    enable = false
     wechat = "/reward/wechat-qr-code.jpg"           # 微信二维码
     #alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 

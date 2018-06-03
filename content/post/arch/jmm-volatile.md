@@ -97,7 +97,7 @@ happens-before 原则可以看作是 JVM 规范对开发者的承诺，用于增
 - 应用场景：状态判断和 DCL
 - volatile 的使用优化：cpu false-sharing 问题，字节填充解决方案等
 - JSR-133 对 volatile 的语义增强
-- 
+- volatile 与锁
 
 以上几个方面应该是比较全面的关于 volatile 的知识了。下面是每一点的简要讲解。
 
@@ -125,6 +125,6 @@ DCL 之所以用 volatile 实际与单例模式没有实质关系。如果没有
 
 旧的模型允许 volatile 和普通变量重排序，JSR-133 做了限制。
 
-### volatile 与 synchronized
+### volatile 与锁
 
 功能上，锁比 volatile 更强大；可伸缩性和执行性能上，volatile 更有优势。

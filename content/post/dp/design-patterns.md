@@ -3,7 +3,7 @@ title: "浅谈设计模式"
 date: 2018-05-19
 draft: false
 tags:
-- docker
+- design patterns
 categories:
 - arch
 ---

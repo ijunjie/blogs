@@ -1,12 +1,13 @@
 ---
-title: "关于"
+title: "About"
 date: 2018-06-15T16:00:30+08:00
+menu: "main"
 draft: false
 ---
 
 
-- 人文主义理想
-- 极客
+富有人文主义理想，极客，兴趣爱好广泛。
+
 - 喜欢的语言：Esperanto, 日本语
 - 编程：函数式编程；Scala, JS, Java, Python, Scheme
 - 绘画；

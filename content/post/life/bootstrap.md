@@ -6,7 +6,7 @@ tags:
 - philosophy
 - bootstrap
 categories:
-- philosophy
+- life
 ---
 
 不知当初是谁把 bootstrap 翻译成了“自举”。由于中文的博大精深，这个词仿佛带有某种谐谑的意味，容易使人联想到电线杆上的野广告。

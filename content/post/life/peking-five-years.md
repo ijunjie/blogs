@@ -2,8 +2,6 @@
 title: "舍不得璀璨俗世"
 date: 2018-06-15T14:57:30+08:00
 draft: false
-tags:
-  - life
 categories:
   - life
 comment: true

@@ -2,9 +2,6 @@
 title: "近四个月以来与咳嗽变异型哮喘和嗜酸性粒细胞哮喘的斗争"
 date: 2018-05-29
 draft: false
-tags:
-- cva
-- ea
 categories:
 - life
 ---

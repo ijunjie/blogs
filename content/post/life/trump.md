@@ -2,8 +2,6 @@
 date: 2018-06-03
 title: "特金会"
 draft: false
-tags:
-  - Trump
 categories:
   - life
 comment: true

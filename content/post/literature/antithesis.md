@@ -4,7 +4,6 @@ date: 2018-05-01
 draft: false
 tags:
 - antithesis
-- literature
 categories:
 - literature
 ---

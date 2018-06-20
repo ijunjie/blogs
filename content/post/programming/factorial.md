@@ -4,9 +4,8 @@ date: 2018-04-27
 draft: false
 tags:
 - fp
-- "tail rec"
 categories:
-- fp
+- programming
 ---
 
 一般的递归都要**显式地调用递归函数**，那么匿名函数如何实现递归调用？

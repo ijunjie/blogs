@@ -5,7 +5,7 @@ draft: false
 tags:
 - fp
 categories:
-- fp
+- programming
 ---
 
 本篇是《浅谈函数式编程》的下篇，主要讲解一些重要的函数式编程概念。上篇主要介绍编程范式： [浅谈函数式编程-上篇：编程范式](https://ijunjie.github.io/post/fp/fp-paradigm/)

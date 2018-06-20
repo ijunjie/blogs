@@ -3,9 +3,10 @@ title: "openstack4j 中的依赖管理"
 date: 2018-04-23
 draft: false
 tags:
-- dp
+- design patterns
 categories:
-- dp
+- programming
+comment: true
 ---
 
 

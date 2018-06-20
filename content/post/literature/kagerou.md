@@ -3,11 +3,9 @@ title: "你可曾见过阳炎"
 date: 2018-05-25
 draft: false
 tags:
-- かげろう
-- 陽炎
-- 物候
+- japanese
 categories:
-- nihongo
+- literature
 ---
 
 你可曾在夏日无风的天气里观察过远处的景物，仿佛隔着一层若隐若现、上下波动的气流。这便是叫做“阳炎”的东西。

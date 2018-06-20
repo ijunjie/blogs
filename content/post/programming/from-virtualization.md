@@ -3,10 +3,9 @@ title: "云计算技术简史"
 date: 2018-05-04
 draft: false
 tags:
-- container
-- kubernetes
-categories:
 - arch
+categories:
+- programming
 ---
 
 这是一份笔者整理的云计算技术发展简史，主要关注虚拟化、分布式、云计算和容器技术的起源和发展。

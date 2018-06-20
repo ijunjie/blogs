@@ -3,10 +3,9 @@ date: 2018-06-03
 title: "递归实现 List"
 draft: false
 tags:
-  - List
-  - recursive
+- fp
 categories:
-  - fp
+- programming
 comment: true
 ---
 

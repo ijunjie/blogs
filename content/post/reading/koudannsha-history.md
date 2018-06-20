@@ -4,9 +4,8 @@ date: 2018-05-28
 draft: false
 tags:
 - history
-- reading
 categories:
-- literature
+- reading
 ---
 
 

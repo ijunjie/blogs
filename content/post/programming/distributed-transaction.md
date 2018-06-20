@@ -4,10 +4,9 @@ date: 2018-06-03
 title: "聊聊分布式事务"
 draft: false
 tags:
-  - BASE
-  - distributed transaction
+- arch
 categories:
-  - arch
+- programming
 comment: true
 ---
 

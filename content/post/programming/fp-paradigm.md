@@ -5,7 +5,7 @@ draft: false
 tags:
 - fp
 categories:
-- fp
+- programming
 ---
 
 ## 当我们谈论函数式编程时，我们在谈论什么？

@@ -3,9 +3,10 @@ title: "一些 Java 和分布式方面的书"
 date: 2018-05-29
 draft: false
 tags:
-- java
-categories:
+- tech books
 - arch
+categories:
+- programming
 ---
 
 说一说我读过的 Java 并发和分布式方面的书。

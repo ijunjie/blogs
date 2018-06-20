@@ -3,9 +3,10 @@ title: "Docker 基础知识拾遗"
 date: 2018-05-19
 draft: false
 tags:
+- arch
 - docker
 categories:
-- arch
+- programming
 ---
 
 

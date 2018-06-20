@@ -3,10 +3,10 @@ date: 2018-06-03
 title: "浅谈 JMM 和 volatile"
 draft: false
 tags:
-  - JMM
-  - volatile
+- arch
+- jvm
 categories:
-  - arch
+- programming
 comment: true
 ---
 

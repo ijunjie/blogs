@@ -4,8 +4,9 @@ date: 2018-06-13
 draft: false
 tags:
 - docker
-categories:
 - arch
+categories:
+- programming
 ---
 
 关于 Docker Machine 的一些实践总结。

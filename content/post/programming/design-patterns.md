@@ -5,7 +5,7 @@ draft: false
 tags:
 - design patterns
 categories:
-- arch
+- programming
 ---
 
 

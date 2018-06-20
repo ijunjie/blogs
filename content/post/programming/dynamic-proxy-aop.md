@@ -3,12 +3,9 @@ title: "动态代理和 AOP"
 date: 2018-05-14
 draft: false
 tags:
-- dp
-- proxy
-- aop
-- spring
+- design patterns
 categories:
-- dp
+- programming
 ---
 
 JDK 动态代理创建时比较快，运行时较慢；CGlib 动态代理正好相反，创建时慢，运行时快。一般选择在系统初始化时，使用 CGlib 代理，并托管到 ApplicationContext 中。代理模式除了用于 AOP 外，还经常用于延迟初始化。代理类包含目标对象的引用，在代理中做延迟初始化。

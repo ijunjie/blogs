@@ -3,9 +3,9 @@ title: "一些 JavaScript 方面的书"
 date: 2018-05-28
 draft: false
 tags:
-- javascript
+- tech books
 categories:
-- frontend
+- programming
 ---
 
 

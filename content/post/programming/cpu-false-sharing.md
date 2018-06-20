@@ -3,10 +3,9 @@ title: "CPU 伪共享问题"
 date: 2018-05-19
 draft: false
 tags:
-- MESI
-- volatile
-categories:
 - arch
+categories:
+- programming
 ---
 
 不知是谁最初把 false sharing 翻译成“伪共享”，翻译得莫名其妙，不知所谓。实际意思应该是“错误的共享”。

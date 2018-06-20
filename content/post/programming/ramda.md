@@ -5,7 +5,7 @@ draft: false
 tags:
 - fp
 categories:
-- fp
+- programming
 ---
 
 # Ramda是什么

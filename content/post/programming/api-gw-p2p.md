@@ -3,9 +3,9 @@ title: "网关和点对点，谁是反模式？"
 date: 2018-05-26
 draft: false
 tags:
-- microservice
-categories:
 - arch
+categories:
+- programming
 ---
 
 有的观点认为，点对点是反模式，也有人认为网关才是反模式。

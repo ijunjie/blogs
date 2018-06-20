@@ -3,10 +3,9 @@ title: "正确理解 ArrayList 和 LinkedList"
 date: 2018-05-02
 draft: false
 tags:
-- java
-- list
+- fp
 categories:
-- ds
+- programming
 ---
 
 

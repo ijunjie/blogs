@@ -74,7 +74,7 @@ defaultContentLanguage = "zh-cn"           # Default language to use
 
   # paginate style, default use numbered pagination links
   # if true, use original "Previous" and "Next" links.
-  paginateOriginalStyle = true
+  paginateOriginalStyle = false
 
   # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
   dateFormatToUse = "2006-01-02"

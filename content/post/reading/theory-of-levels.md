@@ -1,5 +1,5 @@
 ---
-title: "Theory of Levels"
+title: "Theory of Levels: 层次论"
 date: 2018-07-08T17:22:39+08:00
 draft: false
 tags:
@@ -8,15 +8,15 @@ categories:
 - reading
 ---
 
-关于层次理论，马克思和恩格斯、马斯洛，乃至 Linus 都提出过自己的理论。
+马克思和恩格斯、马斯洛，甚至 Linus 都提出过自己的需求层次理论。
 
 ## 马克思和恩格斯
 
-19 世纪，马克思和恩格斯把人的需要分成生存、享受和发展三个层次。人们的生存需要、享受需要和发展需要的满足既取决于生产力水平，也取决于一定的经济制度。
+19 世纪，马克思和恩格斯把人的需要分成**生存、享受和发展**三个层次。人们的生存需要、享受需要和发展需要的满足既取决于生产力水平，也取决于一定的经济制度。
 
 ## 马斯洛
 
-马斯洛的需求层次理论非常完善。他的需要层次论([Hierarchy of Needs Theory](https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs))是其动机理论中最重要的部分。
+马斯洛的需求层次理论非常完善。他的需要层次论（[Hierarchy of Needs Theory](https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs)）是动机理论（[Theories of Motivation](https://2012books.lardbucket.org/books/an-introduction-to-organizational-behavior-v1.1/s09-theories-of-motivation.html)）中最重要的部分。
 
 马斯洛将人的需求分为五个层次：生存、安全、社交、尊重和自我实现。
 
@@ -31,4 +31,4 @@ categories:
 ## 参考
 
 - Linus Tovalz 自传 [Just for Fun](https://en.wikipedia.org/wiki/Just_for_Fun)
-- 
+- [Theories of Motivation](https://2012books.lardbucket.org/books/an-introduction-to-organizational-behavior-v1.1/s09-theories-of-motivation.html)

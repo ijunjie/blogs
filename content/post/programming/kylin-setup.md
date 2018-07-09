@@ -13,7 +13,12 @@ categories:
 
 
 
-Apache Kylin ( 以下简称 Kylin ) 有四种部署方式（参考 [Kylin 的部署](http://www.cnblogs.com/brucexia/p/6221528.html)）。
+Apache Kylin ( 以下简称 Kylin ) 有四种部署方式（参考 [Kylin 的部署](http://www.cnblogs.com/brucexia/p/6221528.html)）:
+
+- 单实例
+- 集群
+- 读写分离
+- 多环境部署
 
 
 
@@ -431,4 +436,4 @@ sh $KYLIN_HOME/bin/kylin.sh stop
 - [Linux分区、格式化和创建文件系统](https://www.jdcloud.com/help/detail/515/isCatalog/1)
 - [Apache Kylin Installation Guide](http://kylin.apache.org/docs/install/index.html)
 - [hadoop的client搭建-即集群外主机访问hadoop](https://www.cnblogs.com/pu20065226/p/8464867.html)
-[Bitnami Documentation For Hadoop](https://docs.bitnami.com/general/apps/hadoop/)
+- [Bitnami Documentation For Hadoop](https://docs.bitnami.com/general/apps/hadoop/)

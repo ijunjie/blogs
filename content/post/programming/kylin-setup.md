@@ -88,7 +88,7 @@ Kylin 提供了一个工具，几分钟就可以将一个 Cube 从 Staging 环�
 
 
 
-### 2. 1 Hadoop 集群
+### 2.1 Hadoop 集群
 
 
 
@@ -127,7 +127,7 @@ Kylin 可以安装到 Hadoop 集群的任意节点上，但官方推荐安装到
 
 
 
-### 2. 3 配置 Hadoop 集群客户端
+### 2.3 配置 Hadoop 集群客户端
 
 
 
@@ -143,7 +143,7 @@ Kylin 可以安装到 Hadoop 集群的任意节点上，但官方推荐安装到
 
 
 
-```shell
+```
 192.168.0.3 a2yGLbxU-Master1.jcloud.local a2yGLbxU-Master1
 192.168.0.5 a2yGLbxU-Core1.jcloud.local a2yGLbxU-Core1
 192.168.0.4 a2yGLbxU-Core2.jcloud.local a2yGLbxU-Core2
@@ -159,7 +159,7 @@ Kylin 可以安装到 Hadoop 集群的任意节点上，但官方推荐安装到
 
 
 
-```shell
+```bash
 groupadd Hadoop
 useradd -d /usr/Hadoop -g Hadoop -m Hadoop
 ```
@@ -170,7 +170,7 @@ useradd -d /usr/Hadoop -g Hadoop -m Hadoop
 
 
 
-```shell
+```bash
 passwd Hadoop
 ```
 
@@ -186,7 +186,7 @@ passwd Hadoop
 
 
 
-```shell
+```
 JAVA_HOME=/opt/jmr/jdk1.8.0_77
 HADOOP_HOME=/data0/Hadoop-2.7.4
 HBASE_HOME=/data0/hbase-1.2.6
@@ -202,7 +202,7 @@ PATH=$HADOOP_HOME/bin:$HBASE_HOME/bin:$HIVE_HOME/bin:$SPARK_HOME/bin:$JAVA_HOME/
 
 
 
-使用 su - hadoop 切换用户，验证 Hadoop 集群客户端是否 ready.
+使用 `su - hadoop` 切换用户，验证 Hadoop 集群客户端是否 ready.
 
 
 
@@ -210,7 +210,7 @@ PATH=$HADOOP_HOME/bin:$HBASE_HOME/bin:$HIVE_HOME/bin:$SPARK_HOME/bin:$JAVA_HOME/
 
 
 
-```shell
+```bash
 hadoop version
 ```
 
@@ -239,18 +239,17 @@ This command was run using /data0/hadoop-2.7.4/share/hadoop/common/hadoop-common
 
 
 
-```shell
+```bash
 hadoop jar /data0/hadoop-2.7.4/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.4.jar pi 10 100
 ```
 
 
 
-输出：
+输出结果中包含 Pi 的近似值：
 
 
 
 ```
-...
 Estimated value of Pi is 3.14800000000000000000
 ```
 
@@ -264,7 +263,7 @@ Estimated value of Pi is 3.14800000000000000000
 
 
 
-```shell
+```bash
 hadoop fs -mkdir /kylin_test
 hadoop fs -put /data0/hadoop-2.7.4/etc/hadoop /kylin_test/input
 ```
@@ -278,7 +277,7 @@ hadoop fs -put /data0/hadoop-2.7.4/etc/hadoop /kylin_test/input
 
 
 
-```shell
+```bash
 hadoop jar /data0/hadoop-2.7.4/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.4.jar grep /kylin_test/input /kylin_test/output 'dfs[a-z.]+'
 ```
 
@@ -292,7 +291,7 @@ hadoop jar /data0/hadoop-2.7.4/share/hadoop/mapreduce/hadoop-mapreduce-examples-
 
 
 
-```shell
+```bash
 hadoop fs -cat /kylin_test/output/part-r-00000
 ```
 
@@ -310,7 +309,7 @@ Hiveserver2 是一个允许远程客户端针对 Hive 执行查询并获取结�
 
 
 
-```shell
+```bash
 beeline -u jdbc:hive2://192.168.0.3:10000 -n hadoop
 ```
 
@@ -330,7 +329,7 @@ beeline -u jdbc:hive2://192.168.0.3:10000 -n hadoop
 
 
 
-```shell
+```bash
 run-example SparkPi 10
 ```
 
@@ -380,7 +379,7 @@ Kylin 的二进制安装包将近 300 M, 建议使用下载工具提前下载好
 
 
 
-```shell
+```bash
 tar -zxvf apache-kylin-2.3.1-hbase1x-bin.tar.gz
 cd apache-kylin-2.3.1-bin
 export KYLIN_HOME=`pwd`
@@ -392,7 +391,7 @@ export KYLIN_HOME=`pwd`
 
 
 
-```shell
+```bash
 sh $KYLIN_HOME/bin/check-env.sh
 ```
 
@@ -402,7 +401,7 @@ sh $KYLIN_HOME/bin/check-env.sh
 
 
 
-```shell
+```bash
 sh $KYLIN_HOME/bin/kylin.sh start
 ```
 
@@ -424,7 +423,7 @@ sh $KYLIN_HOME/bin/kylin.sh start
 
 
 
-```shell
+```bash
 sh $KYLIN_HOME/bin/kylin.sh stop
 ```
 

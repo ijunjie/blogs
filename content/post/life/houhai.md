@@ -1,14 +1,12 @@
 ---
-title: "后海印象"
+title: "我在天气晴朗的日子里去过什刹海或后海"
 date: 2018-07-09T22:37:32+08:00
 draft: false
 categories:
 - life
 ---
 
-北京这几年其实也是有过一些好天气的。在天气晴朗的日子，后海沿岸的风光还是非常漂亮的。
-
-即使用手机也可以拍出效果不错的照片。画面明净清澈，仿佛油画一般。这里分享的是 2016 年 4 月和 2017 年 10 月，我用手机镜头拍下的后海沿岸的风景。全部使用手机拍摄，没有做处理。
+我曾在天气晴朗的日子里去过两次什刹海；也许是后海，我搞不清。每一个喜欢明净清澈的天空和水面的人都会从我拍的照片中获得新的印象。照片全是手机拍摄，除分辨率外没有做其他处理。
 
 
 {{< figure link="/life/houhai-1.jpg" thumb="-small" caption="2016 年 4 月 17 日下午，后海沿岸" >}}
@@ -16,10 +14,6 @@ categories:
 
 {{< figure link="/life/houhai-2.jpg" thumb="-small" caption="2016 年 4 月 17 日下午，后海沿岸" >}}
 
-
-{{< blockquote author="Jacques Clouseau" link="https://en.wikipedia.org/wiki/The_Pink_Panther_%282006_film%29" title="The Pink Panther, 2006" >}}
-  It is lovely weather we are having. I hope the weather stays this mild. If the weather continues, we are in for a lovely summer.
-{{< /blockquote >}}
 
 {{< figure link="/life/houhai-3.jpg" thumb="-small" caption="2017 年 10 月 29 日清晨，后海沿岸" >}}
 

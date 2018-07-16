@@ -139,4 +139,4 @@ let factorial = n => (f => n => s => f(f)(n)(s))
 console.log(factorial(5));
 ```
 
-这里面关键在于**匿名函数通过形式参数实现了递归调用**。匿名函数没有名字，只能将匿名函数作为参数传递实现递归调用。欲了解更多，请参考笔者的另一篇文章： [浅谈函数式编程（高阶函数）](https://ijunjie.github.io/post/fp/fp-basic/#%E7%BB%BC%E5%90%88%E7%A4%BA%E4%BE%8B)
+这里面关键在于**匿名函数通过形式参数实现了递归调用**。匿名函数没有名字，只能将匿名函数作为参数传递实现递归调用。欲了解更多，请参考笔者的另一篇文章： [浅谈函数式编程（高阶函数）](https://ijunjie.github.io/post/programming/fp-basic/#%E7%BB%BC%E5%90%88%E7%A4%BA%E4%BE%8B)

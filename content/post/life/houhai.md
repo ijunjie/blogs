@@ -6,9 +6,7 @@ categories:
 - life
 ---
 
-每一个喜欢明净清澈的天空和水面的人都会从这些照片中获得新的印象。
 
-*（照片用手机拍摄；除分辨率未做其他处理；点击可放大）*
 
 
 {{< figure link="/life/houhai-1.jpg" thumb="-small" caption="2016 年 4 月 17 日下午，什刹海/后海沿岸" >}}

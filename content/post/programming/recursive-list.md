@@ -11,7 +11,7 @@ comment: true
 
 使用模式匹配和递归实现 List，不考虑栈溢出的问题。
 
-由于 Java 没有模式匹配，没有 sealed 关键字，也不支持协变，采用 FP 思想实现 List 有些不便，但好在新版 Java 的 interface 可以使用 static 和 default，某种程度上接近于 trait 了。
+与 Scala 相比，Java 没有模式匹配，没有 sealed，不支持协变，只能利用 interface 的 static 和 default 关键字，实现某种意义上的 trait.
 
 Java 实现：
 
@@ -22,13 +22,10 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
- * Java 中没有 sealed 关键字，无法保证 interface 的子类是限定的
- * Java 也没有模式匹配，因此判断实例类型时，应精确匹配 Nil 和 Cons.
+ * 判断实例类型时，应精确匹配 Nil 和 Cons.
  * 这里假定只有 Nil 和 Cons.
  * <p>
  * List 中各个方法都长得差不多，这是因为全部使用了模式匹配 + 递归实现。
- * <p>
- * 模式匹配 + 递归可以说是 FP 的精髓。
  *
  * @param <A>
  */
@@ -292,7 +289,7 @@ public class ListApp {
 
 ```
 
-以上代码不考虑栈溢出，展示了模式匹配和递归实现 List 的精髓。了解 Lisp/Scheme 的人对此不会陌生。同时也可以看出 Java 的类型系统不够强大。
+以上代码不考虑栈溢出。
 
 用 Scala 会简洁许多：
 

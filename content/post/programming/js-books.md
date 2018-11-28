@@ -10,7 +10,7 @@ categories:
 
 
 
-JavaScript 是我最喜爱的语言之一。虽然并没有直接从事前端开发，但一直关注 JavaScript，并且对原生 JavaScript 语言有浓厚兴趣。以前读过几本不错的书籍，在这里推荐一下。
+JavaScript 是我最喜爱的语言之一。以前读过几本不错的书籍，在这里推荐一下。
 
 
 ## 《JavaScript 语言精髓与编程实践 》- 周爱民

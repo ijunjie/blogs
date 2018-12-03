@@ -68,7 +68,7 @@ defaultContentLanguage = "zh-cn"           # Default language to use
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
   since = "2017"            # Site creation time          # 站点建立时间
   homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
-  rssFullContent = false     # if false, Rss feed instead of the summary
+  rssFullContent = true     # if false, Rss feed instead of the summary
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
   # logoTitle = "Jane"        # default: the title value    # 默认值: 上面设置的title值
@@ -125,11 +125,11 @@ defaultContentLanguage = "zh-cn"           # Default language to use
     # repo = "xianmin/comments-for-hugo-theme-jane"    # The repo to store comments
     # issueTerm = "pathname"
 
-  [params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
-    owner = "ijunjie"              # Your GitHub ID
-    repo = "blog-gitment"               # The repo to store comments
-    clientId = "1554b4f2b80abedeb1fe"           # Your client ID
-    clientSecret = "8c203d8374520b8871e4c0b1b309bcf77bd369fe"       # Your client secret
+  #[params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
+    #owner = "ijunjie"              # Your GitHub ID
+    #repo = "blog-gitment"               # The repo to store comments
+    #clientId = "1554b4f2b80abedeb1fe"           # Your client ID
+    #clientSecret = "8c203d8374520b8871e4c0b1b309bcf77bd369fe"       # Your client secret
 
 
   [params.reward]                                         # 文章打赏

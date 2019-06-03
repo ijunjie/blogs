@@ -1,6 +1,6 @@
 ---
 date: 2018-06-03
-title: "浅谈 JMM 和 volatile"
+title: "JMM 和 volatile"
 draft: false
 tags:
 - arch

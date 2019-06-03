@@ -1,7 +1,7 @@
 ---
 title: "素描的意义"
 date: 2018-06-23T10:21:30+08:00
-draft: false
+draft: true
 tags:
 - art
 categories:

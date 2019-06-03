@@ -1,7 +1,6 @@
-
 ---
 date: 2018-06-03
-title: "聊聊分布式事务"
+title: "分布式事务 memo"
 draft: false
 tags:
 - arch
@@ -11,9 +10,9 @@ comment: true
 ---
 
 
-丢个链接闪人：[https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html](https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html)
 
-算了，还是写点导读。上面链接是关于分布式事务极其解决方案写的比较好的一篇文章。主要总结了如下问题：
+
+
 
 - 分布式理论
 	- CAP
@@ -26,4 +25,5 @@ comment: true
 	- Sagas 事务模型。鲜为人知。
 
 
-再丢个链接 [https://blog.csdn.net/mine_song/article/details/64118963](https://blog.csdn.net/mine_song/article/details/64118963) ，闪人。
+- [https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html](https://www.cnblogs.com/savorboard/p/distributed-system-transaction-consistency.html)
+- [https://blog.csdn.net/mine_song/article/details/64118963](https://blog.csdn.net/mine_song/article/details/64118963) 

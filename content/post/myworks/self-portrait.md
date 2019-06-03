@@ -1,7 +1,7 @@
 ---
 title: "一副潦草的自画像"
 date: 2018-05-26
-draft: false
+draft: true
 tags:
 - painting
 categories:

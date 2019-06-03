@@ -1,7 +1,7 @@
 ---
 title: "The Meaning of Art"
 date: 2018-05-23
-draft: false
+draft: true
 tags:
 - art
 categories:

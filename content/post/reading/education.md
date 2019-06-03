@@ -1,7 +1,7 @@
 ---
 title: "现代教育的本质"
 date: 2018-06-20T20:22:14+08:00
-draft: false
+draft: true
 tags:
   - education
 categories:

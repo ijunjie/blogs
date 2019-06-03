@@ -1,7 +1,7 @@
 ---
 title: "勇猛精进"
 date: 2018-06-15T14:57:30+08:00
-draft: false
+draft: true
 categories:
   - life
 comment: true

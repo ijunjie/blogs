@@ -9,14 +9,14 @@ categories:
 - programming
 ---
 
-关于 Docker Machine 的一些实践总结。
+
 
 Docker Machine 用于解决多主机环境部署 docker 的效率和一致性问题。 
 
 创建 machine 要求能够无密码登录远程主机，所以需要先通过 ssh-copy-id 将 ssh key 拷贝到目标机器。
 
 往普通的 Linux 中部署 docker，可以使用 generic driver.
- 
+
 
 创建完 machine 后，到 `/etc/systemd/system/docker.service.d/` 查看配置(笔者环境为 CentOS 7.5.1804, Docker 18.05.0-ce)，确认 docker-deamon 已经被 docker-machine 配置为接收远程访问。目标机器的 hostname 也会被设置。
 

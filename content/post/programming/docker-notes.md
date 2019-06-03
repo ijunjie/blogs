@@ -1,5 +1,5 @@
 ---
-title: "Docker 基础知识整理"
+title: "Docker 基础知识学习笔记"
 date: 2018-05-19
 draft: false
 tags:
@@ -148,7 +148,7 @@ Docker 会缓存已有镜像的镜像层，构建新镜像时，如果某镜像�
 	输出 `Hello, $name`
 
 ### ENTRYPOINT & CMD
-	
+
 ```
 ENTRYPOINT ["/bin/echo", "Hello"]  
 CMD ["world"]

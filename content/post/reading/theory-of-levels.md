@@ -1,7 +1,7 @@
 ---
 title: "Theory of Levels: 层次论"
 date: 2018-07-08T17:22:39+08:00
-draft: false
+draft: true
 tags:
 - philosophy
 categories:

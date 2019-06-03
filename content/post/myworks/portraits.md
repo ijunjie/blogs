@@ -1,7 +1,7 @@
 ---
 title: "人物"
 date: 2018-05-26
-draft: false
+draft: true
 tags:
 - painting
 categories:

@@ -11,9 +11,9 @@ categories:
 
 
 
-[Rinor Maloku ](https://rinormaloku.com/me/) 在 [Kubernetes and everything else in Practice](https://rinormaloku.com/kubernetes-everything-else-practice/) 一文中全面、细致地讲述了一个微服务应用的开发、构建，并部署到 Kubernetes 的过程。全文洋洋洒洒分为十一篇，并配有精美的动态演示图，实为入门 Kubernetes 的良心之作。如果链接打不开，可以访问 DockOne 提供的中文版：[三小时学会Kubernetes：容器编排详细指南](http://www.dockone.io/article/5132)。
+[Rinor Maloku ](https://rinormaloku.com/me/) 在 [Kubernetes and everything else in Practice](https://rinormaloku.com/kubernetes-everything-else-practice/) 一文中全面、细致地讲述了一个微服务应用的开发、构建，并部署到 Kubernetes 的过程。DockOne 提供了中文版：[三小时学会Kubernetes：容器编排详细指南](http://www.dockone.io/article/5132)。
 
-本文根据实际操作情况，对代码和部署做了一些调整：
+这里对代码和部署做了一些调整：
 
 - 使用多节点集群代替 minikube；
 - Service 类型使用 NodePort 代替 LoadBalancer；

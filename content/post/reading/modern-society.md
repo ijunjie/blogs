@@ -1,7 +1,7 @@
 ---
 title: "为什么要反对个人慈善"
 date: 2018-06-20T20:44:14+08:00
-draft: false
+draft: true
 tags:
   - politics
 categories:

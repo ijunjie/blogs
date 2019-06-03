@@ -8,15 +8,9 @@ categories:
 - programming
 ---
 
-不知是谁最初把 false sharing 翻译成“伪共享”，翻译得莫名其妙，不知所谓。实际意思应该是“错误的共享”。
+false sharing 实际意思是“错误的共享”。
 
-最近在读的几本书都提到了 CPU 伪共享问题。这里尝试做一下总结。这几本书是：
 
-- 《架构解密：从分布式到微服务》，leader-us 著
-- 《java并发编程的艺术》, 方腾飞、魏鹏、程晓明 著
-- 《实战Java高并发程序设计》，葛一鸣、郭超 著
-
-其中，《架构解密》一书中的讲解比较详细。
 
 ## CPU 伪共享
 
@@ -84,7 +78,7 @@ class VolatileLong {
 
 ## 实验
 
-这个例子来源于 [http://ifeve.com/falsesharing/](http://ifeve.com/falsesharing/) 但做了修改。
+这个例子修改自 [http://ifeve.com/falsesharing/](http://ifeve.com/falsesharing/) 
 
 
 
@@ -172,3 +166,7 @@ class VolatileLong {
 - [http://www.cnblogs.com/Binhua-Liu/p/5620339.html](http://www.cnblogs.com/Binhua-Liu/p/5620339.html)
 - [https://www.jianshu.com/p/a9b1d32403ea](https://www.jianshu.com/p/a9b1d32403ea)
 - [http://ifeve.com/falsesharing/](http://ifeve.com/falsesharing/)
+
+- 《架构解密：从分布式到微服务》，leader-us 著
+- 《java并发编程的艺术》, 方腾飞、魏鹏、程晓明 著
+- 《实战Java高并发程序设计》，葛一鸣、郭超 著

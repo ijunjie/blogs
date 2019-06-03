@@ -10,37 +10,38 @@ categories:
 ---
 
 
-Docker for Windows 内置一个单节点 Kubernetes 集群，可以用于本地测试开发。
 
 
 
-## 1. 安装 docker for windows 最新版
 
 
 
-前提条件：打开 BIOS 中的虚拟化选项。
+
+更新：请参考 <https://github.com/AliyunContainerService/k8s-for-docker-desktop> 
 
 
 
-注意，安装 docker for windows 使用 hyper-v 做虚拟化，会导致 virtualbox 和 vmware 不可用。
+## 1. 安装 docker for windows
+
+
+
+打开 BIOS 中的虚拟化选项。
+
+
+
+注意，开启 hyper-v 可能会导致 virtualbox 和 vmware 不可用。
 
 
 
 ## 2. 配置 docker 环境
 
-配合 IDE 的docker 插件使用时，需要打开docker host，勾选 General 选项 ”Expose daemon on 2375” 即可。
+如需启用 docker host，打开 General  ”Expose daemon on 2375” 。
 
 
 
 ## 3. 配置 k8s
 
-在 Settings 中，配置 Kubernetes 选项。
-
-
-
-在安装过程中，Docker 也为我们安装了 kubectl 控制命令：
-
-
+安装过程中会自动安装 kubectl
 
 ```shell
 $ kubectl get namespaces

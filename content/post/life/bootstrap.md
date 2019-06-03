@@ -1,7 +1,7 @@
 ---
 title: "你的产品能够自举吗？"
 date: 2018-05-24
-draft: false
+draft: true
 categories:
 - life
 ---

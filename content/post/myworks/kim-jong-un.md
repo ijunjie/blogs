@@ -1,7 +1,7 @@
 ---
 title: "宇宙无敌大将军"
 date: 2018-04-28
-draft: false
+draft: true
 tags:
 - painting
 categories:

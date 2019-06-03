@@ -1,7 +1,7 @@
 ---
 title: "昔日龌龊不足夸"
 date: 2018-04-26
-draft: false
+draft: true
 tags:
 - painting
 categories:

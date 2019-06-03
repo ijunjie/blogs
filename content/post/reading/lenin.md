@@ -1,7 +1,7 @@
 ---
 date: 2018-06-03
 title: "20世纪俄国三次革命所证实的一条基本规律"
-draft: false
+draft: true
 tags:
   - politics
   - history

@@ -1,7 +1,7 @@
 ---
 title: "Apache Kylin 单实例部署"
 date: 2018-07-09T22:04:28+08:00
-draft: false
+draft: true
 tags:
 - kylin
 categories:

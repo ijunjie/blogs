@@ -1,7 +1,7 @@
 ---
 title: "一个 Kubernetes 微服务应用示例"
 date: 2018-04-30
-draft: false
+draft: true
 tags:
 - arch
 - kubernetes

@@ -1,7 +1,7 @@
 ---
 title: "正确理解 ArrayList 和 LinkedList"
 date: 2018-05-02
-draft: false
+draft: true
 tags:
 - fp
 categories:

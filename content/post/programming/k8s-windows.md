@@ -1,7 +1,7 @@
 ---
 title: "Windows 配置 docker 和 k8s 开发环境"
 date: 2018-12-03
-draft: false
+draft: true
 tags:
 - k8s
 - docker

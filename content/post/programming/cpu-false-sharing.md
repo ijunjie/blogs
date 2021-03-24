@@ -1,7 +1,7 @@
 ---
 title: "CPU 伪共享问题"
 date: 2018-05-19
-draft: false
+draft: true
 tags:
 - arch
 categories:

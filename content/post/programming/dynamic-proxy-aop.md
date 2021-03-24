@@ -1,7 +1,7 @@
 ---
 title: "动态代理和 AOP"
 date: 2018-05-14
-draft: false
+draft: true
 tags:
 - design patterns
 categories:

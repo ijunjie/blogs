@@ -1,7 +1,7 @@
 ---
 date: 2018-06-03
 title: "JMM 和 volatile"
-draft: false
+draft: true
 tags:
 - arch
 - jvm
